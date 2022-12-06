@@ -1,7 +1,7 @@
 name: SEU Auto Leave
 on:
   schedule:
-    - cron: '05 22 * * *'
+    - cron: '50 02 * * *'
     # cron表达式，时区是UTC时间，比我们早8小时，如上所表示的是每天UTC时间的22点05分整， 北京时间的06点05分（24小时制）
     # 可在此网站查询UTC时间和北京时间的换算关系 https://datetime360.com/cn/utc-beijing-time/
   watch:
@@ -25,7 +25,7 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         sudo apt-get install python3-setuptools -y
-        git clone https://github.com/quzard/SEU_Auto_Leave.git
+        git clone https://github.com/zw20210531/SEU_Auto_Leave.git
         cp -r SEU_Auto_Leave/* .
         pip3 install -r requirements.txt
         python3 main.py
